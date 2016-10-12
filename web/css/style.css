@@ -2009,7 +2009,7 @@ fieldset[disabled] .btn-link:focus {
 
 .login-box {
 	width: 400px;
-	margin: 100px auto;
+	margin: 0 auto;
 	background: rgb(245,245,245); /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y1ZjVmNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjE5JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc3JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNWY1ZjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -2068,10 +2068,11 @@ fieldset[disabled] .btn-link:focus {
 
 .login-box .input-prepend {
 	background: #fff;
-	width: 100%;
+	width: 60%;
 	text-align: center;
-	padding: 15px 0px;
+	padding: 15px 50px;
 	border-left: 3px solid #fff;
+	margin: 0 auto;
 }
 
 .login-box .input-prepend-focus {
@@ -2086,6 +2087,7 @@ fieldset[disabled] .btn-link:focus {
 	border: 1px solid #eee !important;
 	background: #fff;
 	margin-left: -10px;
+	float: left;
 }
 
 .login-box .add-on i{
@@ -2095,13 +2097,16 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .login-box input[type="text"],
-.login-box input[type="password"] {
+.login-box input[type="password"],
+.login-box input[type="email"]
+{
 	border: 1px solid #eee !important;
 	color: #aaa;
 	border-left: none !important;
 	-webkit-box-shadow: none;
        -moz-box-shadow: none;
           	box-shadow: none;
+	width: 100%;
 }
 
 .login-box .remember {
@@ -2979,5 +2984,9 @@ ul.messagesList li span.date {
 		background: url(../img/chat-right-metro@2x.png) no-repeat 0px 0px;
 		background-size: 100%;
 	}
-    
+
+	.input-prepend div{
+		display: inline-block;
+	}
+
 }
