@@ -1,0 +1,38 @@
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.company-info .logo-company {
+	float: left;
+	width: 10%;
+	margin-top: 10px;
+}
+.company-info .add-on {
+	margin-left: 2%;
+}
+.company-info .glyphicons-icon {
+	width: 23px;
+	height: 24px;
+}
+.company-info .glyphicons-icon.iphone {
+    background-position: -145px -769px;
+}
+.company-info .btn {
+	margin-left: 2%;
+}
+.lead-table .input-prepend.control-label {
+	display: inline-block !important;
+}
+.search-form {
+	margin-top: 20px;
+}
+.search-form .controls {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px !important;
+}
+
