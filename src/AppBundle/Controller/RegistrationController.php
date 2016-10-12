@@ -47,10 +47,14 @@ class RegistrationController extends Controller
 
             return $this->redirectToRoute('homepage');
         }
-
+        $validator = $this->get('validator');
+        $error = $validator->validate($user);
         return $this->render(
             'registration/register.html.twig',
-            array('form' => $form->createView())
+            array(
+                'form' => $form->createView(),
+                'error' => $error,
+            )
         );
     }
 }
