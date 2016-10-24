@@ -8,8 +8,9 @@
 
 namespace AppBundle\Repository;
 
+use Doctrine\ORM\EntityRepository;
 
-class ContactRepository
+class ContactRepository extends EntityRepository
 {
 
 }

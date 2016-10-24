@@ -6,6 +6,15 @@
 
 
 {% block body %}
+    {% for product in products %}
+    {{ product.id }}<br>
+    {{ product.username }}<br>
+    {{ product.password }}<br>
+    {% endfor %}
+    <br><br>
+    <br><br>
+    <a href="{{ url('security_logout') }}"><h1>logout</h1></a>
+
 {% endblock %}
 
 

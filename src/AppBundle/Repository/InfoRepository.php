@@ -9,7 +9,9 @@
 namespace AppBundle\Repository;
 
 
-class InfoRepository
+use Doctrine\ORM\EntityRepository;
+
+class InfoRepository extends EntityRepository
 {
 
 }

@@ -7,3 +7,14 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+#         class: AppBundle\Listener\SendMailListener
+#         arguments: ['%mailer_user%', '%mailer_user%']
+#         tags:
+#             - {name: kernel.event_listener, event: send.mail.registration, method: sendRegistrationMail}
+
+#     benki.flash_listener:
+#          class: AppBundle\Listener\FlashListener
+#          arguments: ['@session']
+#          tag:
+#             - {name: kernel.event_subscriber }

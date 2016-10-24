@@ -9,7 +9,8 @@
 namespace AppBundle;
 
 
-class ResumeEvents
+final class ResumeEvents
 {
+    const POST_CREATED = 'post_created';
 
 }

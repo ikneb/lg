@@ -9,7 +9,9 @@
 namespace AppBundle\Repository;
 
 
-class SkillRepository
+use Doctrine\ORM\EntityRepository;
+
+class SkillRepository extends EntityRepository
 {
 
 }

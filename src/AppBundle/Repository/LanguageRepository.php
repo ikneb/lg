@@ -9,7 +9,9 @@
 namespace AppBundle\Repository;
 
 
-class LanguageRepository
+use Doctrine\ORM\EntityRepository;
+
+class LanguageRepository extends EntityRepository
 {
 
 }

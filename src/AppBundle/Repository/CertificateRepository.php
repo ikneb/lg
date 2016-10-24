@@ -8,8 +8,8 @@
 
 namespace AppBundle\Repository;
 
+use Doctrine\ORM\EntityRepository;
 
-class CertificateRepository
-{
+class CertificateRepository extends EntityRepository {
 
 }

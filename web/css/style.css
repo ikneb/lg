@@ -377,8 +377,11 @@ a.brand span {
           	box-shadow: none !important;
 }
 .logo{
-	width: 100%;
-	margin: 40px 100px; 
+	width: 200px;
+	margin: 40px 100px;
+}
+.logo img{
+
 }
 .header-nav a.btn  {
 	color: #fff !important;
@@ -2087,10 +2090,8 @@ fieldset[disabled] .btn-link:focus {
 
 .login-box .input-prepend-focus {
 	background: #fcfcfc;
-	width: 100%;
 	text-align: center;
-	padding: 15px 0px;
-	border-left: 3px solid #646464;
+
 }
 
 .login-box .add-on {
@@ -2999,4 +3000,31 @@ ul.messagesList li span.date {
 		display: inline-block;
 	}
 
+}
+
+
+
+/*home page*/
+.container-fluid .logo{
+	width: 100px;
+	padding-top: 7px;
+}
+.photo{
+	width: 1170px;
+	height: 580px;
+}
+.wrap-home{
+	/*padding-top: 20px;*/
+}
+.container .box{
+    width: 100%;
+	margin-left: -1px;
+}
+
+/*login*/
+.login-box .form-horizontal{
+	margin: 0 20px 20px 20px;
+}
+.input-prepend{
+	max-width: 300px;
 }

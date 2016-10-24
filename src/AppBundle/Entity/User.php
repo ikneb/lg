@@ -2,14 +2,16 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
+
 /**
  * @ORM\Table(name="app_users")
- * @ORM\Entity(repositoryClass="AppBundle\Entity\UserRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  * @UniqueEntity(fields="email", message="Email already taken")
  * @UniqueEntity(fields="username", message="Username already taken")
  */
@@ -72,13 +74,110 @@ class User implements UserInterface, \Serializable
         $this->roles = $roles;
     }
 
+    /**
+     * @ORM\OneToOne(targetEntity="Contact")
+     * @ORM\JoinColumn(name="contact_id", referencedColumnName="id")
+     */
+    private $contact;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Objective")
+     * @ORM\JoinColumn(name="objective_id", referencedColumnName="id")
+     */
+    private $objective;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Skill", mappedBy="user")
+     */
+    private $skill;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Practice", mappedBy="user")
+     */
+    private $practice;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Certificate", mappedBy="user")
+     */
+    private $certificate;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Education", mappedBy="user")
+     */
+    private $education;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Language", mappedBy="user")
+     */
+    private $language;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Info")
+     * @ORM\JoinColumn(name="info_id", referencedColumnName="id")
+     */
+    private $info;
 
 
     public function __construct()
     {
         $this->isActive = true;
+        $this->skill = new ArrayCollection();
+        $this->practice = new ArrayCollection();
+        $this->certificate = new ArrayCollection();
+        $this->education = new ArrayCollection();
+        $this->language = new ArrayCollection();
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid(null, true));
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getInfo()
+    {
+        return $this->info;
+    }
+
+    /**
+     * @param mixed $info
+     */
+    public function setInfo($info)
+    {
+        $this->info = $info;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getObjective()
+    {
+        return $this->objective;
+    }
+
+    /**
+     * @param mixed $objective
+     */
+    public function setObjective($objective)
+    {
+        $this->objective = $objective;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContact()
+    {
+        return $this->contact;
+    }
+
+    /**
+     * @param mixed $contact
+     */
+    public function setContact($contact)
+    {
+        $this->contact = $contact;
     }
 
     /**
@@ -167,6 +266,7 @@ class User implements UserInterface, \Serializable
             //$this->salt,
             ) = unserialize($serialized);
     }
+
 
     /**
      * Get id
@@ -263,5 +363,64 @@ class User implements UserInterface, \Serializable
     public function isEnabled()
     {
         return $this->isActive;
+    }
+
+    /**
+     * Get new skill for this user
+     */
+    public function addSkill(Skill $skill)
+    {
+        $this->skill->add($skill);
+        $skill->setUser($this);
+    }
+
+    public function removeSkill(Skill $skill)
+    {
+        $this->skill->removeElement($skill);
+    }
+
+    public function addPractice(Practice $practice)
+    {
+        $this->practice->add($practice);
+        $practice->setUser($this);
+    }
+
+    public function removePractice( $practice)
+    {
+        $this->skill->removeElement($practice);
+    }
+
+    public function addCertificate(Certificate $certificate)
+    {
+        $this->certificate->add($certificate);
+        $certificate->setUser($this);
+    }
+
+    public function removeCertificate( $certificate)
+    {
+        $this->certificate->removeElement($certificate);
+    }
+
+    public function addEducation(Education $education)
+    {
+        $this->education->add($education);
+        $education->setUser($this);
+    }
+
+    public function removeEducation( $education)
+    {
+        $this->education->removeElement($education);
+    }
+
+
+    public function addLanguage(Language $language)
+    {
+        $this->language->add($language);
+        $language->setUser($this);
+    }
+
+    public function removeLanguage( $language)
+    {
+        $this->language->removeElement($language);
     }
 }
